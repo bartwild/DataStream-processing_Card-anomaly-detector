@@ -4,10 +4,11 @@ if docker ps | grep -q "jobmanager"; then
     echo "Środowisko Kafka/Flink jest już uruchomione."
 else
     echo "Uruchamiam środowisko Kafka/Flink..."
-    docker compose up -d
-    
+    docker compose up -d --build
+
     echo "Czekam na uruchomienie kontenerów..."
-    sleep 20
+    ./scripts/create-topics.sh
+    sleep 25
 
     python3 python/initialize_data.py
 fi

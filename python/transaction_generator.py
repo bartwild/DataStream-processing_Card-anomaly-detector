@@ -417,7 +417,6 @@ class TransactionGenerator:
         if is_anomaly:
             transaction = self.generate_anomaly_transaction(card_id)
             if transaction["anomaly_type"] == "multi_card_distance" or transaction["anomaly_type"] == "impossible_travel":
-                #self.update_local_cache(card_id, transaction)
                 self.producer.send(KAFKA_TOPIC, transaction)
                 transaction = self.generate_normal_transaction(card_id)
                 return transaction
@@ -475,7 +474,7 @@ class TransactionGenerator:
                 # else:
                 # logger.debug(f"Generated normal transaction for card {transaction['card_id']}")
 
-                time.sleep(0.1)
+                time.sleep(0.0001)
 
         except Exception as e:
             logger.error(f"Error in transaction generator: {e}")

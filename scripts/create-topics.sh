@@ -7,9 +7,8 @@ done
 
 echo "Creating Kafka topics..."
 
-docker exec kafka kafka-topics --create --topic Temperatura --bootstrap-server kafka:9092 --partitions 3 --replication-factor 1 --if-not-exists
-docker exec kafka kafka-topics --create --topic Statystyki --bootstrap-server kafka:9092 --partitions 3 --replication-factor 1 --if-not-exists
-docker exec kafka kafka-topics --create --topic Alarm --bootstrap-server kafka:9092 --partitions 3 --replication-factor 1 --if-not-exists
+docker exec kafka kafka-topics --create --topic Transactions --bootstrap-server kafka:9092 --partitions 4 --replication-factor 1 --if-not-exists
+docker exec kafka kafka-topics --create --topic Alarms --bootstrap-server kafka:9092 --partitions 4 --replication-factor 1 --if-not-exists
 
 echo "Listing all topics:"
 docker exec kafka kafka-topics --bootstrap-server kafka:9092 --list
