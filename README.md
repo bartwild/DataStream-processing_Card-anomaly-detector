@@ -31,6 +31,7 @@ The system detects the following **10 types of card transaction anomalies**:
 ---
 
 ## ⚙️ Architecture & Components
+```
 +-------------+ +-----------+ +---------+ +--------------+
 | Redis DB | <---> | Generator | ---> | Kafka | ---> | Apache Flink |
 +-------------+ +-----------+ +---------+ +--------------+
@@ -39,7 +40,7 @@ v
 +---------------+
 | Visualizer UI |
 +---------------+
-
+```
 ### 🗃 Redis
 - Stores card data: `card_id`, `user_id`, location, statistical parameters, limits.
 
