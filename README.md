@@ -78,7 +78,12 @@ Everything is containerized via `docker-compose`:
 ### 🛠 Setup (first time)
 ```bash
 ./scripts/t_setup.sh
-▶️ Launch the system
-./scripts/t_run.sh=
-🛠 Debug containers (optional)
+```
+### ▶️ Launch the system
+```bash
+./scripts/t_run.sh
+```
+### 🛠 Debug containers (optional)
+```bash
 ./scripts/debug.sh
+```
